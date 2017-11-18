@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule,
   MatTabsModule, MatSortModule, MatToolbarModule, MatCardModule, MatCardContent,
-  MatTableModule, MatGridListModule } from '@angular/material';
+  MatTableModule, MatGridListModule, MatPaginatorModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -10,7 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     providers: [],
     imports: [],
     exports: [
-        BrowserModule,
         BrowserAnimationsModule,
         MatInputModule,
         MatButtonModule,
@@ -21,7 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         MatToolbarModule,
         MatCardModule,
         MatTableModule,
-        MatGridListModule
+        MatGridListModule,
+        MatPaginatorModule,
     ]
 })
 export class MaterialModule {

@@ -1,4 +1,24 @@
-<mat-card>
-    <mat-card-title>Teste</mat-card-title>
-    <img mat-card-image>
-</mat-card>
+<div class="content">
+    <mat-card>
+        <form>
+            <mat-form-field class="full-width">
+                <input matInput type="search" placeholder="Digite o nome do livro ou autor para busca">
+            </mat-form-field>
+        </form>
+        <mat-grid-list cols="5" rowHeight="1:2">
+            <mat-grid-tile>
+                <mat-card class="card-image">
+                    <mat-card-content>
+                        <img class="img-card" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Ursus_arctos_-_Norway.jpg/250px-Ursus_arctos_-_Norway.jpg">
+                    </mat-card-content>
+                    <mat-card-title>
+                        Livro de Urso
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        Autor: Pedro Alves Cabral
+                    </mat-card-subtitle>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card>
+</div>
