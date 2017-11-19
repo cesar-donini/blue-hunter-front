@@ -1,10 +1,8 @@
 <div class="content">
     <mat-card>
-        <form>
-            <mat-form-field class="full-width">
-                <input matInput type="search" placeholder="Digite o nome do livro ou autor para busca">
-            </mat-form-field>
-        </form>
+        <mat-form-field class="full-width">
+            <input matInput type="search" placeholder="Digite o nome do livro ou autor para busca">
+        </mat-form-field>
         <mat-grid-list cols="5" rowHeight="1:2">
             <mat-grid-tile>
                 <mat-card class="card-image">
@@ -17,6 +15,10 @@
                     <mat-card-subtitle>
                         Autor: Pedro Alves Cabral
                     </mat-card-subtitle>
+                    <mat-chip-list>
+                        <mat-chip color="primary" selected="true">Preço $13.09</mat-chip>
+                        <mat-chip color="primary" selected="true">Ano 2017</mat-chip>
+                    </mat-chip-list>
                 </mat-card>
             </mat-grid-tile>
         </mat-grid-list>

@@ -1,10 +1,8 @@
 <div class="content">
     <mat-card>
-        <form>
-            <mat-form-field class="full-width">
-                <input matInput type="search" placeholder="Digite o nome do usuário">
-            </mat-form-field>
-        </form>
+        <mat-form-field class="full-width">
+            <input matInput type="search" [(ngModel)]="nameSearch" (ngModelChange)="search($event)" placeholder="Digite o nome do usuário">
+        </mat-form-field>
         <div class="mat-elevation-z8">
             <mat-table #table [dataSource]="dataSource">
 
@@ -13,24 +11,34 @@
                     <mat-cell *matCellDef="let element"> {{element._id}} </mat-cell>
                 </ng-container>
 
-                <ng-container matColumnDef="name">
+                <ng-container matColumnDef="fullName">
                     <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
-                    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                    <mat-cell *matCellDef="let element"> {{element.fullName}} </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="gender">
                     <mat-header-cell *matHeaderCellDef> Sexo </mat-header-cell>
-                    <mat-cell *matCellDef="let element"> {{element.gender}} </mat-cell>
+                    <mat-cell *matCellDef="let element"> {{element.gender | gender}} </mat-cell>
                 </ng-container>
 
-                <ng-container matColumnDef="mail">
+                <ng-container matColumnDef="age">
+                    <mat-header-cell *matHeaderCellDef> Idade </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.age}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="email">
                     <mat-header-cell *matHeaderCellDef> E-mail </mat-header-cell>
-                    <mat-cell *matCellDef="let element"> {{element.mail}} </mat-cell>
+                    <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
                 </ng-container>
 
-                <ng-container matColumnDef="birthDate">
-                    <mat-header-cell *matHeaderCellDef> Data de Nascimento </mat-header-cell>
-                    <mat-cell *matCellDef="let element"> {{element.birthDate}} </mat-cell>
+                <ng-container matColumnDef="phone">
+                    <mat-header-cell *matHeaderCellDef> Telefone </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.phone}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="username">
+                    <mat-header-cell *matHeaderCellDef> Usuário </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
                 </ng-container>
 
                 <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

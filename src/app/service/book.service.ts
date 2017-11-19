@@ -1,27 +1,34 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { IUser } from '../interfaces/user';
 import { environment } from '../../environments/environment';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Observable';
+import { IBook } from '../interfaces/book';
 
 @Injectable()
-export class UserService {
+export class BookService {
 
     constructor(
         private http: Http) {
 
     }
 
-    public findByName(name: string): Observable<IUser[]> {
+    public findByTitle(title: string): Observable<IBook[]> {
         return this.http
-                .get(`/${environment.endpoint}/user/by-name/${name}`)
+                .get(`/${environment.endpoint}/book/by-title/${title}`)
                 .map(res => res.json())
                 .catch(err => Observable.throw(err.message));
     }
 
-    public find(): Observable<IUser[]> {
+    public findByAuthor(author: string): Observable<IBook[]> {
+        return this.http
+                .get(`/${environment.endpoint}/book/by-author/${author}`)
+                .map(res => res.json())
+                .catch(err => Observable.throw(err.message));
+    }
+
+    public find(): Observable<IBook[]> {
         return this.http
                 .get(`/${environment.endpoint}/user`)
                 .map(res => res.json())
