@@ -10,6 +10,9 @@
         <mat-form-field class="full-width">
             <input matInput type="search" [(ngModel)]="searchText"  (ngModelChange)="search($event)" placeholder="Digite o {{searchBy}} do livro">
         </mat-form-field>
+        <div class="error" *ngIf="books && books.length == 0">
+            Livros não encontrados
+        </div>
         <mat-grid-list cols="4" rowHeight="500px">
             <div *ngFor="let book of books">
             <mat-grid-tile>

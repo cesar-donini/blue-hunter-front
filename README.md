@@ -1,27 +1,29 @@
-# BlueHunterFront
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Se você for um Dev Frontend
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+### Para buildar a aplicação com Docker Compose:
+```
+docker-compose build
+```
+	
+## Execução
 
-## Running unit tests
+### Para executar a aplicação com Docker Compose:
+```
+docker-compose up -d
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Para executar a aplicação sem Docker:
+```
+npm start
+```
+	
 
-## Running end-to-end tests
+## Decisões técnicas
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+<b>Docker:</b> A utilização do Docker foi para facilitar a execução e deploy do projeto.
 
-## Further help
+<b>Angular-cli:</b> Facilidade de criar a estrutura e auxilio para desenvolver as features.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+<b>Angular Material:</b> Opção pelos componentes do angular 2.

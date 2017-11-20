@@ -1,19 +1,11 @@
 const PROXY_CONFIG = {
-    "/dev": {
-        "target": "http://localhost:3000",
+    "/blue-hunter": {
+        "target": process.env.ENDPOINT || "http://localhost:3000",
         "secure": false,
         "pathRewrite": {
-            "^/dev": ""
+            "^/blue-hunter": ""
         },
         "logLevel": "debug"
-    },
-    "/prod": {
-        "target": 'http://localhost:3000',
-        "secure": false,
-        "pathRewrite": {
-            "^/prod": ""
-        },
-        "logLevel": "debug"
-    },
+    }
 }
 module.exports = PROXY_CONFIG;

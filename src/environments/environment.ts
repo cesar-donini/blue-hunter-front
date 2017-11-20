@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  endpoint: 'dev'
+  endpoint: 'blue-hunter'
 };
