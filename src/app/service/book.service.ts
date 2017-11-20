@@ -30,7 +30,7 @@ export class BookService {
 
     public find(): Observable<IBook[]> {
         return this.http
-                .get(`/${environment.endpoint}/user`)
+                .get(`/${environment.endpoint}/book`)
                 .map(res => res.json())
                 .catch(err => Observable.throw(err.message));
     }

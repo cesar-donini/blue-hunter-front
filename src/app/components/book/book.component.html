@@ -1,26 +1,35 @@
 <div class="content">
     <mat-card>
+        <div style="margin-bottom: 15px">
+            <label>Buscar por:</label>
+            <mat-radio-group [(ngModel)]="searchBy">
+                <mat-radio-button value="autor">Autor</mat-radio-button>
+                <mat-radio-button value="titulo">Título</mat-radio-button>
+            </mat-radio-group>
+        </div>
         <mat-form-field class="full-width">
-            <input matInput type="search" placeholder="Digite o nome do livro ou autor para busca">
+            <input matInput type="search" [(ngModel)]="searchText"  (ngModelChange)="search($event)" placeholder="Digite o {{searchBy}} do livro">
         </mat-form-field>
-        <mat-grid-list cols="5" rowHeight="1:2">
+        <mat-grid-list cols="4" rowHeight="500px">
+            <div *ngFor="let book of books">
             <mat-grid-tile>
-                <mat-card class="card-image">
+                <mat-card class="card-image" style="height: 80%">
                     <mat-card-content>
-                        <img class="img-card" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Ursus_arctos_-_Norway.jpg/250px-Ursus_arctos_-_Norway.jpg">
+                        <img class="img-card" src="{{book.image}}">
                     </mat-card-content>
                     <mat-card-title>
-                        Livro de Urso
+                        {{book.title}}
                     </mat-card-title>
                     <mat-card-subtitle>
-                        Autor: Pedro Alves Cabral
+                        Autor: {{book.author}}
                     </mat-card-subtitle>
                     <mat-chip-list>
-                        <mat-chip color="primary" selected="true">Preço $13.09</mat-chip>
-                        <mat-chip color="primary" selected="true">Ano 2017</mat-chip>
+                        <mat-chip color="primary" selected="true">Preço {{book.price}}</mat-chip>
+                        <mat-chip color="primary" selected="true">Ano {{book.yearPublished}}</mat-chip>
                     </mat-chip-list>
                 </mat-card>
             </mat-grid-tile>
+            </div>
         </mat-grid-list>
     </mat-card>
 </div>
