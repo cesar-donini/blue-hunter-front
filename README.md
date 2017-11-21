@@ -1,24 +1,13 @@
 # Se você for um Dev Frontend
 
-## Build
+## Ambiente
 
-### Para buildar a aplicação com Docker Compose:
-```
-docker-compose build
-```
-	
-## Execução
-
-### Para executar a aplicação com Docker Compose:
-```
-docker-compose up -d
-```
-
-### Para executar a aplicação sem Docker:
+### Execução
 ```
 npm start
 ```
-	
+Acessar: http://localhost:4200/
+
 
 ## Decisões técnicas
 
